@@ -2,10 +2,11 @@ import {memo, useContext, useState} from "react";
 import styles from "./Row.module.css";
 import {TableContext} from "../../../App";
 import Cell from "./Cell/Cell";
+import {getNotNil} from "../../../Functions/utils";
 
 function Row({id}: { id: string }) {
   const {tableData, deleteRow, editRow} = useContext(TableContext);
-  const rowData = tableData.rows.find((el) => el.id === id)
+  const rowData = getNotNil(tableData.rows.find((el) => el.id === id), "rowData")
 
   const [changeMode, setChangeMode] = useState(false)
   const [currData, setCurrData] = useState(rowData)
@@ -21,7 +22,7 @@ function Row({id}: { id: string }) {
   }
 
   function changeName(value: string) {
-    setCurrData(({name, cells, id}) => {
+    setCurrData(({cells, id}) => {
       return {
         cells, id, name: value
       }

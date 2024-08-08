@@ -4,7 +4,7 @@ import {getRandomInt} from "./utils";
 
 export async function createColumn() {
   const numberOfColumn = getRandomInt(2, 10)
-  const columnNames: IColumnsData[] = new Array(numberOfColumn).fill(null).map((el, i) => {
+  const columnNames: IColumnsData[] = new Array(numberOfColumn).fill(null).map((_, i) => {
         return {id: uuidv4(), name: `Обработка${i + 1}`}
       }
   )
@@ -14,8 +14,8 @@ export async function createColumn() {
 export async function createTable(column: IColumnsData[]) {
   const numberOfRows = getRandomInt(2, 20)
 
-  const rowsNames: IRowData[] = new Array(numberOfRows).fill(null).map((el, i) => {
-        const cells = new Array(column.length).fill(null).map(el => {
+  const rowsNames: IRowData[] = new Array(numberOfRows).fill(null).map((_, i) => {
+        const cells = new Array(column.length).fill(null).map((_) => {
           const randomBool = Math.random() < 0.5;
           return {id: uuidv4(), value: randomBool}
         })

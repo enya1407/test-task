@@ -7,6 +7,7 @@ import {IRowData, ITableData, Loading} from "./Types/types";
 import {createPortal} from "react-dom";
 import ModalDelete from "./Components/ModalDelete/ModalDelete";
 
+const voidFN = () => undefined;
 
 const context: { tableData: ITableData, deleteRow: (id: string) => void, editRow: (row: IRowData) => void } = {
   tableData: {
@@ -16,9 +17,9 @@ const context: { tableData: ITableData, deleteRow: (id: string) => void, editRow
     rows: [
       {id: "1", name: "заказ1", cells: [{id: "1", value: true}]},
     ]
-  }, deleteRow: (id) => {
-  }, editRow: (id) => {
-  }
+  },
+  deleteRow: voidFN,
+  editRow: voidFN
 }
 export const TableContext = createContext(context);
 
@@ -34,7 +35,7 @@ function App() {
       const nextRow: IRowData = {
         id: uuidv4(),
         name: `Заказ${rows.length + 1}`,
-        cells: new Array(columnNames.length).fill(null).map(el => {
+        cells: new Array(columnNames.length).fill(null).map(() => {
           const randomBool = Math.random() < 0.5;
           return {id: uuidv4(), value: randomBool}
         })
@@ -65,7 +66,7 @@ function App() {
     setModal(true)
   }
 
-  function handleModal(value) {
+  function handleModal(value: boolean) {
     value && setTableData(({columnNames, rows}) => {
       const newRows = rows.filter(el => el.id !== deletedElement)
       return {
@@ -97,7 +98,7 @@ function App() {
                   <Table/>
                   <button className="addRow" onClick={addRow}> Добавить строку</button>
                   {modal && createPortal(
-                      <ModalDelete handleNodal={handleModal}/>,
+                      <ModalDelete handleModal={handleModal}/>,
                       document.body
                   )}
                 </div>

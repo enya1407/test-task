@@ -1,8 +1,10 @@
 import {memo} from "react";
-import {ICellData} from "../../../../Types/types";
+import {ICellData, IRowData} from "../../../../Types/types";
 import styles from "./Cell.module.css";
 
-function Cell({ cell, changeMode, setCurrData}: { cell: ICellData, changeMode: boolean, setCurrData: (rowData) => void }) {
+type TSetRowCallback = (rowData: IRowData) => IRowData
+
+function Cell({ cell, changeMode, setCurrData}: { cell: ICellData, changeMode: boolean, setCurrData: (cb: TSetRowCallback) => void }) {
 
   function changeCell() {
     setCurrData(({name, cells, id}) => {
