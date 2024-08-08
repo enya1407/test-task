@@ -1,0 +1,31 @@
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    caret-color: transparent;
+}
+
+.table thead tr:first-child {
+    height: 180px;
+    font-size: 24px;
+}
+
+.table td, th {
+    border: 1px solid black;
+    padding: 0;
+}
+
+.table td:last-child > div {
+    display: flex;
+}
+
+.table tr {
+    height: 50px;
+}
+
+.collName p {
+    transform: rotate(90deg);
+    width: 40px;
+    padding: 0;
+    margin-top: -80px;
+}

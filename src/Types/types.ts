@@ -1,20 +1,20 @@
-export interface ICellsData {
+export interface ICellData {
   id: string;
   value: boolean;
 }
 
-export interface IRowsData {
+export interface IRowData {
   id: string;
   name: string;
-  cells: ICellsData[]
+  cells: ICellData[]
 }
 export interface IColumnsData {
   id: string;
   name: string;
 }
-export interface ITablesData {
+export interface ITableData {
   columnNames: IColumnsData[]
-  rows: IRowsData[]
+  rows: IRowData[]
 }
 
 export enum Loading { Column, Row, All}

@@ -1,28 +1,21 @@
 import {memo} from "react";
+import styles from "./ModalDelete.module.css";
 
-function ModalDelete() {
-  return(
-      <div>
-        <button onClick={openModal}>Open Modal</button>
-        <Modal
-            isOpen={modalIsOpen}
-            onAfterOpen={afterOpenModal}
-            onRequestClose={closeModal}
-            style={customStyles}
-            contentLabel="Example Modal"
-        >
-          <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-          <button onClick={closeModal}>close</button>
-          <div>I am a modal</div>
-          <form>
-            <input />
-            <button>tab navigation</button>
-            <button>stays</button>
-            <button>inside</button>
-            <button>the modal</button>
-          </form>
-        </Modal>
+function ModalDelete({handleNodal}) {
+
+  return (
+      <div className={styles.backdrop}>
+        <div className={styles.modal}>
+          <div className={styles.header}>
+            <h3>Вы уверены, что хотите удалить?</h3>
+          </div>
+          <div className={styles.body}>
+            <button onClick={() => handleNodal(true)}>да</button>
+            <button onClick={() => handleNodal(false)}>нет</button>
+          </div>
+        </div>
       </div>
   )
 }
-export default memo(Modal);
+
+export default memo(ModalDelete);
