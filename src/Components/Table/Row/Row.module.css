@@ -45,7 +45,10 @@ th p {
     color: black;
     caret-color: black;
     font-style: italic;
+    border: black solid 1px;
+    border-radius: 8px;
 }
+
 
 .editRow td:not(:last-child) {
     border-bottom: 1px solid #c9985f;
