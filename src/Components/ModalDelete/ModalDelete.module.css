@@ -12,14 +12,14 @@
 
 .modal {
     box-sizing: border-box;
-    background: grey;
+    background: white;
     width: 600px;
     height: 350px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.144);
     border-radius: 10px;
     transition: all .3s;
     animation: showModal .3s ease-out;
-    padding: 80px;
+    padding: 70px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,7 +38,7 @@
 }
 
 .body button {
-    width: 150px;
+    width: 200px;
     height: 80px;
     font-size: 24px;
 }

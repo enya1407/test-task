@@ -9,5 +9,6 @@
 
 .addRow {
     margin-top: 50px;
-    padding: 20px;
+    height: 80px;
+    width: 250px;
 }

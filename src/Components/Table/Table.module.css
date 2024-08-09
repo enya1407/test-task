@@ -2,7 +2,7 @@
     border-collapse: collapse;
     border-spacing: 0;
     table-layout: fixed;
-    caret-color: transparent;
+    background-color: #adb4c4;
 }
 
 .table thead tr:first-child {
@@ -28,4 +28,5 @@
     width: 40px;
     padding: 0;
     margin-top: -80px;
+    color: black;
 }

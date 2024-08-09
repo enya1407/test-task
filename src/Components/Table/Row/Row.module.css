@@ -1,19 +1,30 @@
+tr td:last-child{
+    border: none;
+    padding: 3px;
+}
 .delete {
     width: 100px;
+    padding: 5px;
+    font-size: 20px;
+    margin-left: 3px;
 }
 
 .editButton {
-    width: 160px;
+    width: 150px;
+    padding: 5px;
+    font-size: 20px;
 }
 
 .changeMode {
     display: flex;
     justify-content: space-between;
+    width: 150px;
 }
 
 .changeMode button {
-    width: 80px;
-
+    width: 73px;
+    padding: 5px;
+    font-size: 20px;
 }
 
 th {
@@ -24,14 +35,19 @@ th p {
     width: 180px;
     margin: 0;
     height: 40px;
+    color: black;
 }
 
 .input {
     width: 170px;
     font-size: 24px;
+    background-color: white;
+    color: black;
+    caret-color: black;
+    font-style: italic;
 }
 
 .editRow td:not(:last-child) {
-    border-bottom: 1px solid #646cff;
-    box-shadow: rgba(100, 108, 255, 0.35) 0 -50px 36px -28px inset;
+    border-bottom: 1px solid #c9985f;
+    box-shadow: rgba(7201,152,95, 0.35) 0 -50px 36px -28px inset;
 }

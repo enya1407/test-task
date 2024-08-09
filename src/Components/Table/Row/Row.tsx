@@ -34,7 +34,7 @@ function Row({id}: { id: string }) {
         <th>
           {
             changeMode
-                ? <input className={styles.input} value={currData.name} onChange={(e) => changeName(e.target.value)}/>
+                ? <input autoFocus={true} className={styles.input} value={currData.name} onChange={(e) => changeName(e.target.value)}/>
                 : <p>{currData.name}</p>
           }
         </th>
